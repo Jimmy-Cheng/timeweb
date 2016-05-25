@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <title>TIME时代国际语言中心——国际课程</title>
 
@@ -29,49 +29,52 @@
   <link href="/stylesheets/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/css/site.css" rel="stylesheet" type="text/css" />
 
+  <link href="/stylesheets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+
   <!-- Standard iPhone -->
   <link rel="apple-touch-icon" href="/images/icons/time.png" />
 
   <!-- Page Level Styles -->
   <style type="text/css">
+
     /* Custom Styles */
 
-    /*.navbar {*/
-      /*border-radius: 0px;*/
-      /*margin-bottom: 0px;*/
-    /*}*/
+    body, p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+    .section-heading h2 {
+      font-size: 30px;
+    }
 
-    /*.navbar-right {*/
-      /*margin-right: 0px;*/
-    /*}*/
+    #intro.intro {
+      padding: 15% 0 0;
+    }
 
-    /*.container {*/
-      /*width: 100%;*/
-    /*}*/
+    h2, h3, h4 {
+      margin: 0;
+      padding-bottom: 10px;
+    }
 
-    /*.item {*/
-      /*padding: 0px;*/
-    /*}*/
+    p {
+      margin: 0;
+    }
 
-    /*.item div {*/
-      /*text-align: center;*/
-      /*padding: 20px;*/
-      /*margin: 5px;*/
-      /*background-color: #FFD700;*/
-      /*font-size:25px;*/
-      /*font-weight: bolder;*/
-    /*}*/
+    #intro p {
+      padding-bottom: 10px;
+    }
 
     .classify-icon {
-      margin-top: 30px;
+      margin-top: 10px;
     }
 
     .classify-name {
-      margin-top: 15px;
+      margin-top: 5px;
     }
 
-    .course-section {
-      padding-bottom: 110px;
+    .home-section {
+      padding: 0;
+      z-index: 0;
     }
 
     .heading-about .container {
@@ -84,6 +87,7 @@
 
     .classify-item {
       cursor: pointer;
+      height: 87px;
     }
 
     .classify-item.standby:hover {
@@ -120,11 +124,11 @@
       bottom: 60px;
     }
 
-    .wechat {
+    .sidebar.wechat-us {
       bottom: 120px;
     }
 
-    .hotline {
+    .sidebar.contact-us {
       bottom: 180px;
     }
 
@@ -153,13 +157,14 @@
       margin-right: 4px;
       color: white;
       font-weight: bolder;
+      line-height: 24px;
     }
 
     .consult-nav {
       font-size: 12px;
       font-weight: bolder;
       text-align: center;
-      padding: 10px 0px;
+      padding: 8px 0px;
       width: 100%;
       margin: 0px;
       position: fixed;
@@ -173,9 +178,58 @@
 
     .consult-nav i {
       font-size: 24px;
+      padding-bottom: 2px;
     }
 
+    footer {
+      padding: 10px 0;
+    }
 
+    footer p {
+      margin: 20px 0;
+    }
+
+    #mask {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #080808;
+      color: #FFFFFF;
+    }
+
+    #mask .mask-hide {
+      display: none;
+    }
+    #mask .mask-show {
+      display: block;
+    }
+    #mask .mask-body {
+      padding: 20px;
+    }
+    #mask-footer {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 74px;
+      background-color: black
+    }
+
+    #mask dt {
+      color: #FFD700
+    }
+
+    #mask img {
+      display: initial;
+    }
+
+    #close {
+      color: white;
+      border: 1px white solid;
+      border-radius: 5px;
+      margin: 20px;
+    }
   </style>
 
 </head>
@@ -192,7 +246,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="index">
+        <a class="navbar-brand" href="main">
           <h1>TIME 时代国际语言中心</h1>
         </a>
       </div>
@@ -215,163 +269,155 @@
       <h2>WELCOME TO <span class="text_color">TIME</span> </h2>
       <h4>我们采用全球领先的课程测评跟踪体系</h4>
     </div>
-    <div class="page-scroll">
-      <a href="#course" class="btn btn-circle">
-        <i class="fa fa-angle-double-down animated"></i>
-      </a>
-    </div>
+    <p class="text-center">
+      <a href="tel:400-8800-799" class="btn btn-primary btn-lg"><strong><i class="fa fa-phone"></i> 400-8800-799</strong></a>
+    </p>
   </section>
   <!-- /Section: intro -->
 
   <!-- Section: course -->
-  <section id="course" class="course-section bg-gray">
-
-    <div class="heading-about text-center">
+  <section id="course" class="home-section bg-gray">
+    <div class="course-list">
       <div class="container">
+
+        <blockquote>
+          <p>北美课程</p>
+        </blockquote>
         <div class="row">
-          <div class="classify-item col-xs-3 active">
-            <div class="classify-box">
-              <div class="classify-icon">
-                <img src="/images/icons/star.png" alt="" />
-              </div>
-              <div class="classify-name">
-                <h5>热门精选</h5>
-              </div>
-            </div>
-          </div>
-          <div class="classify-item col-xs-3 standby">
-            <div class="classify-box">
-              <div class="classify-icon">
-                <img src="/images/icons/medal.png" alt="" />
-              </div>
-              <div class="classify-name">
-                <h5>留学名校</h5>
+          <div id="usa" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>美国中小学入学课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
             </div>
           </div>
-          <div class="classify-item col-xs-3 standby">
-            <div class="classify-box">
-              <div class="classify-icon">
-                <img src="/images/icons/pen.png" alt="" />
-              </div>
-              <div class="classify-name">
-                <h5>语言考试</h5>
-              </div>
-            </div>
-          </div>
-          <div class="classify-item col-xs-3 standby">
-            <div class="classify-box">
-              <div class="classify-icon">
-                <img src="/images/icons/clipboard.png" alt="" />
-              </div>
-              <div class="classify-name">
-                <h5>其它课程</h5>
+          <div id="canada" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>加拿大中小学入学课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="course-list">
-      <div class="container">
+
+        <blockquote>
+          <p>亚洲课程</p>
+        </blockquote>
         <div class="row">
-          <div class="col-xs-12">
-            <blockquote>
-              <p>北美课程</p>
-            </blockquote>
-            <div class="panel-group" id="accordion">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="media" data-toggle="collapse" data-parent="#accordion"
-                         href="#collapseOne">
-                        <img class="media-object pull-left" src="/images/icons/usa.png"
-                             alt="媒体对象">
-                      <div class="media-body">
-                        <h4 class="media-heading">美国小学课程</h4>
-                        <div class="course-keywords">
-                          <span>关键字:</span>
-                          <span class="label label-default">美国</span>
-                          <span class="label label-primary">IP</span>
-                          <span class="label label-success">A-level</span>
-                        </div>
-                        <div class="course-operate">
-                          <span>关键字:</span>
-                          <span class="label label-default">美国</span>
-                          <span class="label label-primary">IP</span>
-                          <span class="label label-success">A-level</span>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    <dl>
-                      <dt>招生对象</dt>
-                      <dd>1、准备留学加拿大的学员；
-                        2、希望针对自身问题进行英语能力提高的学员；
-                        3、希望通过提前学习加拿大中小学课程以便留学更顺畅的学员
-                        4、学习时间不固定、需要灵活安排的学员；
-                        5、自觉性较差需要老师关注的学员。</dd>
-                      <dt>课程介绍</dt>
-                      <dd>1、VIP外教辅导。
-                        2、根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；
-                        3、将加拿大文化与加拿大中小学同步课程融合到一起，提前感受留学生活。
-                        4、讲解升学考试知识点和考试技巧，帮助学生了解升学考试规律。
-                        4、课程过程轻松愉快高效，寓教于乐，学员与外教轻松沟通。</dd>
-                    </dl>
-                  </div>
-                </div>
+          <div id="hk" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>香港中小学入学课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
-              <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseTwo">
-                      点击我进行展开，再次点击我进行折叠。第 2 部分--show 方法
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                    lomo.
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+
+        <blockquote>
+          <p>澳新课程</p>
+        </blockquote>
+        <div class="row">
+          <div id="australia" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>澳大利亚中小学AEAS课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
-              <div class="panel panel-info">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseThree">
-                      点击我进行展开，再次点击我进行折叠。第 3 部分--toggle 方法
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                    lomo.
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div id="singapore" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>新加坡中小学AEIS课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
-              <div class="panel panel-warning">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseFour">
-                      点击我进行展开，再次点击我进行折叠。第 4 部分--options 方法
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                    lomo.
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+
+        <blockquote>
+          <p>其它课程</p>
+        </blockquote>
+        <div class="row">
+          <div id="a-level" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>A-LEVEL同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="ap" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>AP同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="sat" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>SAT/SSAT同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="ib" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>IB同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="esl" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>ESL同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="igcse" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>IGCSE/GCSE同步课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="ielts" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>托福/雅思高分课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
+              </div>
+            </div>
+          </div>
+          <div id="language" class="col-xs-12 col-md-3 col-lg-3">
+            <div class="thumbnail">
+              <img src="/images/USA.png" alt="">
+              <div class="caption">
+                <h4>小语种辅导课程</h4>
+                <p><a class="btn btn-primary" role="button">查看详情</a></p>
               </div>
             </div>
           </div>
@@ -385,15 +431,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <div class="wow shake" data-wow-delay="0.4s">
-            <div class="page-scroll marginbot-30">
+          <div class="wow shake visible-xs" data-wow-delay="0.4s">
+            <div class="page-scroll">
               <a href="#course" id="totop" class="btn btn-circle">
                 <i class="fa fa-angle-double-up animated"></i>
               </a>
             </div>
           </div>
-          <p>&copy;Copyright 2014 - Squad. All rights reserved. </p>
-          <!--<p><a style="color:#FFF;font-family: 'microsoft yahei',Arial,sans-serif;" href="http://www.gbtags.com/gb/share/3796.htm">下载地址：极客标签</a></p>-->
+          <p>&copy;Copyright 2016 - TIME. All rights reserved. </p>
+          <hr class="marginbot-50 visible-xs">
         </div>
       </div>
     </div>
@@ -402,10 +448,10 @@
   <div class="sidebar online visible-sm visible-md visible-lg">
     <a class="item btn"><span style="display:none">在线咨询</span><i class="fa fa-comments"></i></a>
   </div>
-  <div class="sidebar hotline visible-sm visible-md visible-lg">
+  <div class="sidebar contact-us visible-sm visible-md visible-lg">
     <a class="item btn"><span style="display:none">客服热线</span><i class="fa fa-phone"></i></a>
   </div>
-  <div class="sidebar wechat visible-sm visible-md visible-lg">
+  <div class="sidebar wechat-us visible-sm visible-md visible-lg">
     <a class="item btn"><span style="display:none">关注微信</span><i class="fa fa-qrcode"></i></a>
   </div>
   <div id="gotop" style="display:none">
@@ -420,15 +466,515 @@
         <i class="fa fa-comments"></i>
         <div>在线咨询</div>
       </div>
-      <div class="col-xs-4 col-sm-4">
-        <i class="fa fa-phone"></i>
-        <div>客服热线</div>
+      <div class="contact-us col-xs-4 col-sm-4">
+        <i class="fa fa-university"></i>
+        <div>联系我们</div>
       </div>
-      <div class="col-xs-4 col-sm-4">
+      <div class="wechat-us col-xs-4 col-sm-4">
         <i class="fa fa-qrcode"></i>
         <div>关注微信</div>
       </div>
     </div>
+  </div>
+
+  <div id="mask" style="display: none">
+
+    <div class="usa mask-body mask-hide">
+      <h2 class="text-center">美国中小学入学课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          收获国际化视野，有更多机会入读常春藤名校。选择美国中小学辅导课程，不仅参加SAT考试可以获得高分，
+          而且可以提升AP等众多进入名校必须先修读的预修课程的成绩。这样可以尽快习惯美国的授课方式，培养美国式学习思维模式。
+          此外，对于申请美国顶级名校的学生来说，在今后留学美国高中所获得的好的学习经历、课外活动、社区活动经历更易被美国大学评估，
+          提交的自我陈述和推荐信亦更具公信力，将进一步提高名校录取率。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学美国的学员；</li>
+            <li>希望针对自身问题进行英语能力提高的学员；</li>
+            <li>希望通过提前学习美国中小学课程以便留学更顺畅的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教辅导。</li>
+            <li>根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；</li>
+            <li>将美国文化与美国中小学同步课程融合到一起，提前感受留学生活。</li>
+            <li>讲解升学考试知识点和考试技巧，帮助学生了解升学考试规律。</li>
+            <li>课程过程轻松愉快高效，寓教于乐，学员与外教轻松沟通。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受美国中小学课程专业培训，而且达到美国学生的英语水平，
+          为留学美国创造更明朗的前景。课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，
+          也为学员将来出国留学能与美国人正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="canada mask-body mask-hide">
+      <h2 class="text-center">加拿大中小学入学课程</h2>
+      <dl>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学加拿大的学员；</li>
+            <li>希望针对自身问题进行英语能力提高的学员；</li>
+            <li>希望通过提前学习美国中小学课程以便留学更顺畅的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教辅导。</li>
+            <li>根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；</li>
+            <li>将加拿大文化与加拿大中小学同步课程融合到一起，提前感受留学生活。</li>
+            <li>讲解升学考试知识点和考试技巧，帮助学生了解升学考试规律。</li>
+            <li>课程过程轻松愉快高效，寓教于乐，学员与外教轻松沟通。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受加拿大中小学课程专业培训，而且达到加拿大学生的英语水平，
+          为留学加拿大创造更明朗的前景。课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，
+          也为学员将来出国留学能与加拿大人正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="hk mask-body mask-hide">
+      <h2 class="text-center">香港中小学入学课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          香港中学毕业文凭的国际认受性
+          香港中学会考评分为A\B\C\D\E五级。中五会考，考生若考获C级，则会被视为等同英国普通教育文凭海外考试的普通程度（GCE O Level）及格。同样，中七会考，若考生考获E级，无论是AL或AS程度，均被视为等同英国普通教育文凭海外考试的高级程度（GCE A Level）及格。可以进入与英国教育体系互认的所有国家的大学。
+          香港高等院校的教育水平：
+          香港高等院校有较高的世界地位。2004年上海交通大学公布的中国大学排名榜，香港的5间大学与北京大学、清华大学等名列前10位，在亚太区大学排名中，香港中文大学排名第23位、科技大学排名25位、香港大学排名37位、理工大学排名第38位、城市大学排名66位。同时，这五所大学也都名列世界500间大学中，排名在第203位至301位之间。
+          香港教育结构：
+          香港的教育主要由香港政府的教育局管理，制度上大致可以分为以下几部份：
+          § 学前教育：透过私立的幼儿园和幼儿园，为学前儿童提供机会学习与群体相处。
+          § 十二/十三年免费教育：在全港设立官立或津贴资助学校，为适龄学童提供六年制免费小学,免费三年制初中课程(中一至中三),免费三年制高中课程(中四至中六)/免费两年制高中（中四、中五),两年制预科课程（中六、中七）
+          § 高中及预科课程：设立两年制高中（中四、中五），为学生提供工作前最基本的教育；设立两年制预科课程（中六、中七），作为学生报考大学前的课程准备。
+          § 专上课程：提供各种形式的专上课程，包括工业学院、大专、大学教育。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学香港的学员；</li>
+            <li>希望针对自身问题进行英语能力提高的学员；</li>
+            <li>希望通过提前学习香港中小学课程以便留学更顺畅的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教辅导。</li>
+            <li>根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；</li>
+            <li>将香港文化与香港中小学同步课程融合到一起，提前感受留学生活。</li>
+            <li>讲解升学考试知识点和考试技巧，帮助学生了解升学考试规律。</li>
+            <li>课程过程轻松愉快高效，寓教于乐，学员与外教轻松沟通。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用一对一纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受香港中小学课程专业培训，而且达到香港学生的英语水平，
+          为留学香港创造更明朗的前景。课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力
+        </dd>
+      </dl>
+    </div>
+
+    <div class="australia mask-body mask-hide">
+      <h2 class="text-center">澳大利亚中小学AEAS课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          澳大利亚教育评估服务机构--AEAS测试
+          随着中国教育国际化的发展，越来越多的家长希望能让孩子到国外学校更好地学习深造。
+          AEAS 测试是目前应用较广的语言测试项目，是澳大利亚教育评估服务机构根据在校中学生的英语水平，为希望到澳大利亚就读中学的中国学生专门特设的综合考试项目。
+          对于备考AEAS的学生，VIP外教课程是最有效果的，而外教授课是首选，它可以帮助学生迅速提分，让学生成功考出理想分数。根据学生实际水平及目标成绩，由教学主管进行学习规划，
+          灵活安排课程时间以及学习进度，确保在有限学习期内迅速提分。全部授课过程采用“VIP外教”模式，即由专家外教授课，并进行各项技能的专项训练。
+          全程由专业的课程顾问跟踪辅导，以及课后综合评估体系全方位确保学员的学习进度和学习效果。VIP外教课程是时代国际语言中心的招牌课程项目。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学澳大利亚的学员；</li>
+            <li>希望针对自身问题进行英语能力提高的学员；</li>
+            <li>时间紧迫需要尽快学习或考取理想分数的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教辅导。</li>
+            <li>根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；</li>
+            <li>讲解考试知识点和考试技巧，帮助学生了解考试规律。</li>
+            <li>课程采用培训和模考的模式。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受AEAS专业培训，而且达到澳大利亚学生的英语水平，为留学澳洲创造更明朗的前景。
+          课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，也为学员将来出国留学能与澳洲人正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="singapore mask-body mask-hide">
+      <h2 class="text-center">新加坡中小学AEIS课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          AEIS，是Admission Exercise for International Students的简称，即新加坡国际学生入学考试。
+          从2008年开始，新加坡教育部推出了AEIS考试，考试时间在9月或者10月，12月中公布结果，通过的学生由教育部统一就近分配学额进入政府中小学。考过的学生将在一月份入学。万一没有考过，就只能等次年的S-AEIS了。
+          S-AEIS，Supplementary Admissions Exercise for International Students (S-AEIS) 的简称，即和AEIS同一性质考试。
+          从2011年开始，新加坡教育部推出了S-AEIS考试，考试时间在2月或者3月，4月中公布结果，通过的学生由教育部统一就近分配学额进入政府中小学。考过的学生将在五月底入学。万一没有考过，只能等同年的AEIS了。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学新加坡的学员；</li>
+            <li>希望针对自身问题进行英语能力提高的学员；</li>
+            <li>时间紧迫需要尽快学习或考取理想分数的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教辅导。</li>
+            <li>根据课程项目进行分项授课，课堂穿插练习、讲解相关升学考试题型；</li>
+            <li>讲解考试知识点和考试技巧，帮助学生了解考试规律。</li>
+            <li>课程采用培训和模考的模式。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          Time时代国际语言中心新加坡政府中小学AEIS外教VIP辅导课程均由专业外教辅导教学，分年级一对一辅导，采用新加坡政府中小学同步教材授课，
+          紧跟AEIS最新考题，课程均采用全英文教学，标准的新加坡课程教育模式及纯正英语语言环境及模拟新加坡AEIS考试。
+        </dd>
+      </dl>
+    </div>
+
+
+    <div class="a-level mask-body mask-hide">
+      <h2 class="text-center">A-LEVEL同步课程</h2>
+      <dl>
+        <dt>课程模块</dt>
+        <dd>
+          A-LEVEL模块:数学、进阶数学、物理、化学、生物、商务知识、经济、中文、心理学、艺术设计、设计工艺、音乐（以上课程可选修）。
+        </dd>
+        <dt>教学目标</dt>
+        <dd>
+          夯实英语基础、提高口语听力、提升运用能力；熟悉考试题型、解析历年真题，把握考题趋势，实战模拟讲评，快速提高成绩。
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受A LEVEL专业培训，而且达到英美学生的英语水平，为申请到国外名牌大学创造更明朗的前景。
+          课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，也为学员将来出国留学能与人用英语正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="ap mask-body mask-hide">
+      <h2 class="text-center">AP同步课程</h2>
+      <dl>
+        <dt>教学目标</dt>
+        <dd>
+          夯实英语基础、提高口语听力、提升运用能力；熟悉考试题型、解析历年真题，把握考题趋势，实战模拟讲评，快速提高AP成绩。
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受AP专业培训，而且达到国外学生的英语水平，为申请到国外名牌大学创造更明朗的前景。
+          课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，也为学员将来出国留学能与人用英语正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="sat mask-body mask-hide">
+      <h2 class="text-center">SAT/SSAT同步课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          对于备考SAT/SSAT的学生，VIP外教课程是最有效果的，而外教授课是首选，它可以帮助学生迅速提分，让学生成功考出理想分数。根据学生实际水平及目标成绩，
+          由教学主管进行学习规划，灵活安排课程时间以及学习进度，确保在有限学习期内迅速提分。全部授课过程采用外教授课模式，即由英美专家外教授课，
+          并进行各项技能的专项训练。全程由专业的课程顾问跟踪辅导，以及课后综合评估体系全方位确保学员的学习进度和学习效果。VIP外教课程是时代国际语言中心的招牌课程项目。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>准备留学美国的学员；</li>
+            <li>参加过考试但成绩不理想希望针对自身问题进行分数提高的学员；</li>
+            <li>时间紧迫需要尽快学习或考取理想分数的学员</li>
+            <li>学习时间不固定、需要灵活安排的学员；</li>
+            <li>自觉性较差需要老师关注的学员。</li>
+          </ol>
+        </dd>
+        <dt>课程介绍</dt>
+        <dd>
+          <ol>
+            <li>VIP外教课程包括SAT、SSAT等。</li>
+            <li>根据考试项目进行分项授课，课堂穿插练习、讲解考试题型；</li>
+            <li>讲解考试知识点和考试技巧，帮助学生了解考试规律。</li>
+            <li>课程采用培训和模考的模式，培训课程内容包含：
+              SAT必要词汇（Vocabulary）、阅读（Critical Reading）、语法（Grammar）、写作（Writing）、数学（Math），SAT真题模拟测试（Practice / Model Exams）。
+              SSAT数学、词汇、阅读等。。</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受美国SAT专业培训，而且达到美国学生的英语水平，为申请到美国名牌大学创造更明朗的前景。
+          课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，也为学员将来出国留学能与美国人正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="ib mask-body mask-hide">
+      <h2 class="text-center">IB同步课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          IB（International Baccalaureate Diploma Programme）课程全称为国际预科证书课程，
+          是由瑞士日内瓦国际文凭组织IBO (International Baccalaureate Organization)为全世界高中生设计的两年制的大学先修课程。
+          国际文凭组织创立于1968年，是一个经联合国科教文卫组织注册的非赢利的国际教育基金会，是世界公认的国际教育的领跑者。
+          IB课程是富有挑战性并享有较高承认度的高中课程，为学生进入大学学习取得国际学士学位证书做准备。IB成绩被北美及欧洲众多著名学府接收，
+          有些大学还为优秀IB毕业生提供奖励学分、越级的鼓励入学政策。全球有分布在近百个国家的一千余所大学与国际文凭组织（IBO）有稳定的协约关系，
+          确保这些大学承认IB文凭。
+          英国几乎所有大学都接受IB文凭，牛津、剑桥等世界一流大学也很欢迎IB学生申请入学。 美国及加拿大的大多数大学都视IB文凭为优良的入学资历。澳洲全国各州所有大学和专业学院都承认IB为一个优良的入学资格。
+          IB课程设计主要集中在中学的最后两年，是为高中十一和十二年级（相当中国高中的高二、高三）学生设置的两年制大学预科课程。IB课程分为三个阶段：预科IB课程（pre-IB）、 标准课程（SL）及高级课程（HL）。
+          IB的课程大纲包括一组核心课程和六个组别的学科选择：
+          核心课程：包括知识理论（Theory of Knowledge，简称TOK）、扩展论文（Extended Essay，简称EE，）和创意、行动与服务（Creativity, Action and Service，简称CAS）活动，均为必修。
+          六个组别的学科选择包括：
+          第一组：语言A（母语）与世界文学。
+          第二组：语言B（母语以外的现代语言）。
+          第三组：个人与社会学，包括历史、地理、商业与管理、经济学、哲学、心理学、IT与全球化社会、社会与文化人类学、世界宗教等9门学科。
+          第四组： 实验科学，包括生物、化学、物理、设计技术等4门学科。
+          第五组： 数学与计算机科学（数学包括标准水平数学研究、标准水平数学、高级水平数学、标准水平进阶数学；计算机科学分为标准水平计算机科学和高级水平计算机科学），
+          其中数学为必修科目；计算机科学为选修课程。
+          第六组： 艺术，包括视觉艺术、音乐、戏剧、电影、舞蹈等5门学科。
+          学生必须从前五组科目中选择其一，第六组为选修，学生可选修其他五个组别中的一个科目来代替此组别。
+
+          IB有自己的评分系统，采取内部评估与外部评估相结合。内部评估在两年的学习期间由学科教师按照评价标准完成，并提交IBO指定的评审官进行评审。
+          内部评估一般占最后成绩的25-50%。外部评估每年两次，北半球学校一般参加五月份的考试。考试由IBO统一安排，学生在各学校参加考试，由IBO发布最后成绩。
+          IB国际高中文凭的每个科目以1至7分计分，六门学科满分共42分；在“知识理论”及“扩展论文”部分成绩优异的学生可获得最多3分的奖励分（Bonus Points，知识理论1分，扩展论文2分）。
+          因此IB国际高中文凭课程的最高分数为45分，及格分数为24分。拿到36至38左右即有资格申请剑桥，申请常春藤大学的学生一般分数在40或以上，以牛津为例，要求IB分数为42+以上的成绩。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          即将学习IB课程的学生或已在学习的在校学生、即将参加IB考试的学生。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="esl mask-body mask-hide">
+      <h2 class="text-center">ESL同步课程</h2>
+      <dl>
+        <dt>课程背景</dt>
+        <dd>
+          ESL（English as a Second Language，以英语为第二语言）是针对母语非英语的并把英语作为第二语言的语言学习者的专业英文课程，
+          是外国学生申请美国大学所必修的一门语言课程。ESL是全美语言学校最通用的世界级权威英语培训课程。
+          通过参加ESL考试，考生不仅可以提高语言水平，还可以更加深入地了解英美国家的社会结构和文化等，
+          使自己的语言水平达到能够顺利在美国学习、生活的水平。凡考试通过的学生都可获得ESL相应的等级证书。
+          ESL证书是受到美国大学联盟认可的。持该证书考生可自由申请联盟内院校的任何专业，无需再提供托福、雅思等其他的语言成绩。
+          成绩合格者将被相应院校录取，并可能获得高额奖学金。
+          ESL课程分等级教学，一般有A~E级。其中A级为最低级，E级为最高级。
+          通过该课程，学生能改善自身整体的英语能力，能够达到与以英语为母语的学生一起学习和生活的程度。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>在准备去北美留学（中学、高校）的学员；</li>
+            <li>无相关培训基础，需要进行ESL课程全方位培训的学员；</li>
+            <li>ESL考试类目中某项单科较薄弱，需要着重加强的学员</li>
+            <li>想在短期内通过紧凑课程迅速提高ESL成绩的学员；</li>
+            <li>学习时间不固定、需要灵活安排的学员</li>
+            <li>能够根据个人特点接受独家课程，享受独立教学空间的学员。</li>
+          </ol>
+        </dd>
+        <dt>教学目标</dt>
+        <dd>
+          夯实英语基础、提高口语听力、提升运用能力；熟悉考试题型、解析历年真题，把握考题趋势，实战模拟讲评，快速提高ESL成绩。
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>第一步：对学生进行测试，由资深专业老师做出评估；</li>
+            <li>第二步：制定学习计划，配备培训课程各项培训师和助教；</li>
+            <li>第三步：分项授课，根据学生的薄弱环节，有效提升成绩。</li>
+            <li>全程教学跟踪：有效掌控学生学习进程，根据学生实际学习情况调整教学方案。全程助教跟进，帮助学员答疑解惑。</li>
+            <li>定期测试：根据学生的实际水平和考试目标，由教学主管优化学习方案和学习计划。</li>
+          </ol>
+        </dd>
+        <dt>授课方式</dt>
+        <dd>
+          采用纯外教授课，课堂上轻松有趣，不仅能使学员有效地接受ESL专业培训，而且达到国外学生的英语水平，为申请到国外名牌大学创造更明朗的前景。
+          课堂上学员与外教全程用英语交流，这样不仅能使外教及时更正学员的口语发音，提高学员听力，也为学员将来出国留学能与人用英语正常沟通铺桥搭路。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="igcse mask-body mask-hide">
+      <h2 class="text-center">IGCSE/GCSE同步课程</h2>
+      <dl>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>即将学习IGCSE课程的学生或已在学习IGCSE的在校学生；</li>
+            <li>准备去英国学习GCSE课程，或已在英国本土学习GCSE的学员；</li>
+            <li>自学IGCSE课程的国内初中或高中在校生</li>
+            <li>需要IGCSE同步辅导或统考前冲刺辅导的学员；</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          <ol>
+            <li>帮助学员解决在IGCSE学习过程中遇到的疑难和问题，扫清各科学习过程中的语言障碍，增强自信力，快速适应和掌握国际课程体系，并迅速脱颖而出成为学习优等生。</li>
+            <li>重点抓基本概念和基本定律的理解和巩固，解决“三基”即基本知识、基本方法、基本能力的问题，形成知识、方法的体系，注重思维能力和学习能力的培养；</li>
+            <li>鼓励充分发挥个人的潜能，激发学生学科兴趣和学生的创造力，提升个人的成就感和幸福感。</li>
+          </ol>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="ielts mask-body mask-hide">
+      <h2 class="text-center">托福/雅思高分课程</h2>
+      <dl>
+        <dt>教材内容</dt>
+        <dd>
+          由权威托福、雅思教师选用最新、最前沿托福、雅思教材，个性化教辅资料和补充练习。
+        </dd>
+        <dt>招生对象</dt>
+        <dd>
+          <ol>
+            <li>未参加过托福、雅思培训，学习时间、地点不固定，需要量身打造课程计划，享受独立课程空间的学生。；</li>
+            <li>已参加过托福、雅思培训，需要单科名师零距离点拨的学生。；</li>
+            <li>需要在短期内迅速提高托福、雅思成绩的学生</li>
+          </ol>
+        </dd>
+        <dt>课程特色</dt>
+        <dd>
+          灵活根据需要选择学习时间、地点，量身打造学习计划，个性化制定听、说、读、写私人托福、雅思高分辅导，最有针对性的学习提高。
+        </dd>
+      </dl>
+    </div>
+
+    <div class="language mask-body mask-hide">
+      <h2 class="text-center">小语种辅导课程</h2>
+      <dl>
+        <dt>培训语种</dt>
+        <dd>
+          日语,韩语,法语,德语,俄语,意大利语,希腊语,西班牙语,阿拉伯语,汉语（粤语等）
+        </dd>
+        <dt>培训形式</dt>
+        <dd>
+          外教一对一辅导、培训
+        </dd>
+        <dt>授课时间</dt>
+        <dd>
+          学习时间自由安排，根据学员自身时间安排上课
+        </dd>
+      </dl>
+    </div>
+
+    <div class="contact mask-body mask-hide text-center">
+      <img src="/images/location.png" class="img-responsive" alt="">
+      <dl>
+        <dt>西湖校区</dt>
+        <dd>
+          杭州市曙光路31号,浙江音乐厅旁
+        </dd>
+        <dt>咨询电话</dt>
+        <dd>
+          <a href="tel:400-8800-799">400-8800-766</a><br>
+          <a href="tel:0571-87971682">0571-87971682</a>
+        </dd>
+        <dt>企业QQ</dt>
+        <dd>
+          739000843
+        </dd>
+      </dl>
+    </div>
+
+    <div class="wechat mask-body mask-hide text-center">
+      <img src="/images/qrcode.jpg" class="img-responsive" alt="">
+      <p>据说99%的外语爱好者都关注这个公众号</p>
+    </div>
+
+    <div id="mask-footer" class="text-center"><a id="close" class="btn" role="button">返回</a></div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -442,6 +988,7 @@
   <script src="/javascripts/custom.js"></script>
 
   <script src="/javascripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+  <script src="/javascripts/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
 
   <script type="text/javascript">
     $(".sidebar").hover(function(){
@@ -476,12 +1023,106 @@
       event.preventDefault();
     });
 
-    $(function () { $('#collapseFour').collapse({
-      toggle: false
-    })});
-    $(function () { $('#collapseTwo').collapse('show')});
-    $(function () { $('#collapseThree').collapse('toggle')});
-    $(function () { $('#collapseOne').collapse('hide')});
+
+    $("#mask .mask-body").mCustomScrollbar({
+      setHeight: ($(window).height() - 54)
+    });
+
+
+    $("#usa").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .usa").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#usa');
+    });
+    $("#canada").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .canada").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#canada');
+    });
+    $("#hk").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .hk").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#hk');
+    });
+    $("#australia").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .australia").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#australia');
+    });
+    $("#singapore").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .singapore").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#singapore');
+    });
+    $("#a-level").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .a-level").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#a-level');
+    });
+    $("#ap").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .ap").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#ap');
+    });
+    $("#sat").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .sat").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#sat');
+    });
+    $("#ib").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .ib").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#ib');
+    });
+    $("#esl").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .esl").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#esl');
+    });
+    $("#igcse").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .igcse").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#igcse');
+    });
+    $("#ielts").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .ielts").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#ielts');
+    });
+    $("#language").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .language").removeClass("mask-hide").addClass("mask-show");
+      $("#close").attr('href', '#language');
+    });
+    $(".contact-us").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .contact").removeClass("mask-hide").addClass("mask-show");
+    });
+    $(".wechat-us").click(function(){
+      $('html,body').css('overflow', 'hidden');
+      $("#mask").show();
+      $("#mask .wechat").removeClass("mask-hide").addClass("mask-show");
+    });
+    $("#close").click(function(){
+      $('html').css('overflow', 'initial');
+      $('body').css('overflow', 'auto');
+      $("#mask").hide();
+      $("#mask .mask-show").removeClass("mask-show").addClass("mask-hide");
+    });
   </script>
 </body>
 </html>
