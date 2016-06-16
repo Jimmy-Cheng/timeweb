@@ -10,6 +10,10 @@ router.get('/main', function(req, res, next) {
   res.render('main');
 });
 
+router.get('/main2', function(req, res, next) {
+  res.render('main2');
+});
+
 router.get('/home', function(req, res, next) {
   res.render('home');
 });
